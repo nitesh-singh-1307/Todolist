@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Todolist</string>
+    <string name="privarty">priority</string>
+    <string name="date">date</string>
+    <string name="discription">discription</string>
+    <string name="Name">Name</string>
+    <string name="str_title">TASK</string>
+    <string name="Save">Save</string>
+    <string name="str_task_name">Title</string>
+    <string name="add_task">Add Task work</string>
+    <string name="str_task_discription">discription</string>
+    <string name="str_task_date">Date</string>
+    <string name="str_task_priorty">priority</string>
+    <string name="str_edit_title">Edit</string>
+    <string name="str_usertype">Enter the type</string>
+    <string name="str_pass">Enter the Password</string>
+    <string name="str_email">Enter the Email</string>
+    <string name="str_Username">Enter the Username</string>
+    <string name="str_registration">Registration</string>
+    <string name="str_login">Login</string>
+
+    <string-array name="prioritylist">
+        <item>"high"</item>
+        <item>"low"</item>
+        <item>"medium"</item>
+    </string-array>
+    <string name="title_activity_text_watcher">TextWatcherActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="UserName">Enter the UserName</string>
+    <string name="usermobilenumber">Enter the Mobile Number</string>
+    <string name="user_password">Enter the Eamil</string>
+    <string name="str_ragistrion_title">Registration</string>
+    <string name="Sign_up">SignUp</string>
+    <string name="Login">Login</string>
+    <string name="Sign_in">Login</string>
+    <string name="str_login_title">Login</string>
+    <string name="example_3_dialog_delete_confirmation">Delete this event?</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
+
+<!--    canlederview-->
+
+    <string name="example_1_title">Example 1</string>
+    <string name="example_1_subtitle">Multiple selection, horizontal scrolling, shows usage of \"maxRowCount\" property to switch between week and month modes. Also shows usage of OutDateStyle \"endOfRow\".</string>
+    <string name="example_2_title">Example 2</string>
+    <string name="example_2_subtitle">Month header view, single selection, vertical scrolling, hides in and out dates.</string>
+    <string name="example_3_title">Example 3</string>
+    <string name="example_3_subtitle">Event style implementation, day labels as header view, single selection, month scroll listener. Similar to what is in the Google Calendar app.</string>
+    <string name="example_4_title">Example 4</string>
+    <string name="example_4_subtitle">Continuous selection within one month and across multiple months, dates older than the current day are disabled. Similar to what is in the Airbnb app.</string>
+    <string name="example_5_title">Example 5</string>
+    <string name="example_5_subtitle">Single selection, programmatic calendar scrolling, generates six rows for all months showing \"endOfGrid\" implementation of \"outDateStyle\" option. A flight schedule calender.</string>
+    <string name="example_6_title">Example 6</string>
+    <string name="example_6_subtitle">Custom date width and height, custom month view, item decoration on the CalendarView, continuous horizontal scrolling style.</string>
+    <string name="example_7_title">Example 7</string>
+    <string name="example_7_subtitle">Week mode calendar with single selection. Shows usage of \"hasBoundaries\" and  \"maxRowCount\" properties.</string>
+    <string name="save">Save</string>
+    <string name="example_3_input_dialog_title">Enter event title</string>
+    <string name="example_3_empty_input_text">Text is empty</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="clear">Clear</string>
+    <string name="week_mode">Week mode</string>
+
+
+
+</resources>

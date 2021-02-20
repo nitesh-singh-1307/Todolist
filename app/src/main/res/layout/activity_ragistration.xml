@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="signinmodel"
+            type="com.demo.todolist.modules.Signup" />
+
+        <variable
+            name="IntentHandler"
+            type="com.demo.todolist.utils.IntentHandlerClass" />
+
+        <variable
+            name="signinviewmodel"
+            type="com.demo.todolist.viewmodel.SigninViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.EditTodoListActivity">
+
+
+        <LinearLayout
+            android:id="@+id/line_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20dim"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/lay_header">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dim"
+                android:gravity="center"
+                android:text="@string/str_ragistrion_title"
+                android:textSize="@dimen/_20dim"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_tst_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/UserName"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_tst_usermobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tst_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_usermobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"
+                    android:hint="@string/usermobilenumber"
+                    android:inputType="number|numberSigned" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_tst_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tst_discrip">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_password"
+                    android:inputType="textEmailAddress" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_tst_privarty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tst_date">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/edit_usertype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/str_usertype" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dim"
+                android:longClickable="true"
+                android:onClick="@{(view) -> signinviewmodel.SignupDataInsert(view,editUsername.getText().toString(),editUsermobile.getText().toString().trim() ,editPassword.getText().toString().trim() , editUsertype.getText().toString().trim())}"
+                android:text="@string/Sign_up"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tst_privarty" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dim"
+                android:longClickable="true"
+                android:onClick="@{() -> IntentHandler.onClickFriend(btnLogin)}"
+                android:text="@string/Login"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tst_privarty" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

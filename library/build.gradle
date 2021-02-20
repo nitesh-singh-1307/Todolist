@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+group='com.github.kizitonwose'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true // Because library's minSdk < 21
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+//    compileOptions {
+//        coreLibraryDesugaringEnabled true
+//        sourceCompatibility = 1.8
+//        targetCompatibility = 1.8
+//    }
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//        freeCompilerArgs += ['-module-name', "$group.$artifact"]
+//    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation "com.android.tools:desugar_jdk_libs:1.0.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
+    // Expose RecyclerView which is CalendarView's superclass to
+    // prevent a compile error when using the library in a project:
+    // Error: Supertypes of the following classes cannot be resolved.
+    // Please make sure you have the required dependencies in the classpath:
+    // class com.kizitonwose.calendarview.CalendarView,
+    // unresolved supertypes: androidx.recyclerview.widget.RecyclerView
+
+    // Not exposing RecyclerView also means that calling findViewById<CalendarView>
+    // results in an error: Type argument is not within its bounds, Expected: View.
+    // This is because CalendarView's superclass type cannot be determined.
+    implementation  "androidx.recyclerview:recyclerview:1.2.0-alpha05"
+
+    testImplementation 'junit:junit:4.+'
+}
+

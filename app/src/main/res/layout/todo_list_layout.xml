@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="todolist"
+            type="com.demo.todolist.modules.Todolist" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/_5dim"
+        app:cardElevation="@dimen/_10dim"
+        android:layout_margin="@dimen/_10dim"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10dim">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_taskname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@string/str_task_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@{todolist.work_name.toString().trim()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvt_view1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text=":"
+                app:layout_constraintStart_toEndOf="@+id/tvt_taskdiscription"
+                app:layout_constraintTop_toTopOf="@+id/tvt_taskname" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_taskdiscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@string/str_task_discription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskname" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@{todolist.description.toString().trim()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvt_view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskname" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text=":"
+                app:layout_constraintStart_toEndOf="@+id/tvt_taskdiscription"
+                app:layout_constraintTop_toTopOf="@+id/tvt_taskdiscription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_taskdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@string/str_task_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdiscription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@{todolist.date}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvt_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdiscription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text=":"
+                app:layout_constraintStart_toEndOf="@+id/tvt_taskdiscription"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdiscription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_taskpriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@string/str_task_priorty"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text="@{todolist.priority.toString().trim()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvt_view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdate" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvt_view4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5dim"
+                android:text=":"
+                app:layout_constraintStart_toEndOf="@+id/tvt_taskdiscription"
+                app:layout_constraintTop_toBottomOf="@+id/tvt_taskdate" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
